@@ -1,8 +1,40 @@
-# Documentação Detalhada da API
 
-Esta seção fornece uma análise detalhada da API de autenticação e posts.
+# Login - auth
+Estrutura de autenticação para o projeto **Login**.
+## Atividade em grupo.
+- Clonar este repositório.
+- Testar a api com **insomnia**.
+- Estudar e documentar a estrutura do projeto.
+- Detalhar e documentar as bibliotecas utilizadas.
+- Documentar descrição do funcionamento utilizando **UML DA(Diagrama de Atividades)**.
 
 ## Bibliotecas Utilizadas
+
+
+- **/src** – Pasta principal com todo o código da API
+  - **/controllers** – Arquivos responsáveis pela lógica das rotas
+  - **/routes** – Arquivos que definem as rotas da API
+  - **/middlewares** – Arquivos que fazem verificações (ex.: autenticação JWT)
+  - **server.js** – Arquivo principal que sobe o servidor
+  
+##  Bibliotecas Utilizadas
+
+- **express** – Framework para criar a API de forma simples e rápida
+- **jsonwebtoken** – Usado para gerar e validar tokens JWT (autenticação)
+- **cors** – Permite requisições de outros domínios (libera o acesso externo à API)
+- **dotenv** – Carrega variáveis de ambiente do arquivo `.env`
+- **nodemon** – Reinicia automaticamente o servidor quando há mudanças no código (desenvolvimento)
+
+##  Rotas da API
+
+###  POST `/login`
+- Descrição: Realiza a autenticação do usuário.
+- Retorna um token JWT.
+
+###  GET `/posts`
+- Descrição: Verifica o token JWT.
+- Retorna todos os dados cadastrados.
+
 
 O projeto utiliza as seguintes bibliotecas Node.js, conforme listado no arquivo `package.json`:
 
@@ -27,82 +59,6 @@ A API expõe duas rotas principais:
 
 ## Diagrama de Atividades UML
 
-O fluxo principal da API, incluindo login e acesso aos posts, pode ser visualizado no diagrama de atividades abaixo (descrito em sintaxe PlantUML):
-
-```plantuml
-@startuml Diagrama de Atividades - API Winx
-
-title Fluxo de Atividades: Autenticação e Acesso a Posts
-
-|Usuário|          |API (Express)|            |Middleware Auth|
-
-start
-
-' Fluxo de Login
-|Usuário|
-:Inicia requisição POST /login;
-:Envia credenciais (email, senha);
-
-|API (Express)|
-:Recebe requisição /login;
-:Controlador Login processa;
-:Verifica credenciais (hardcoded);
-
-if (Credenciais válidas?) then (Sim)
-  :Gera JWT (payload, segredo, expiração);
-  :Retorna resposta 200 OK com JWT;
-  |Usuário|
-  :Recebe e armazena JWT;
-else (Não)
-  |API (Express)|
-  :Retorna resposta 401 Unauthorized;
-  |Usuário|
-  :Recebe erro de login;
-  stop
-endif
-
-' Fluxo de Acesso a Posts
-|Usuário|
-:Inicia requisição GET /posts;
-:Envia JWT no cabeçalho Authorization;
-
-|API (Express)|
-:Recebe requisição /posts;
-
-|Middleware Auth|
-:Intercepta requisição;
-:Extrai token do cabeçalho;
-if (Token presente?) then (Sim)
-  :Verifica assinatura e validade do token (usando segredo);
-  if (Token válido?) then (Sim)
-    :Anexa payload do usuário à requisição;
-    :Chama next();
-    |API (Express)|
-    :Controlador Posts processa;
-    :Lê dados dos posts (data/posts.js);
-    :Retorna resposta 200 OK com posts;
-    |Usuário|
-    :Recebe dados dos posts;
-    stop
-  else (Não)
-    |Middleware Auth|
-    :Retorna resposta 500 Internal Server Error (Erro na validação);
-    ' Nota: Deveria ser 401 ou 403
-    |Usuário|
-    :Recebe erro de acesso;
-    stop
-  endif
-else (Não)
-  |Middleware Auth|
-  :Retorna resposta 401 Unauthorized (Token ausente);
-  |Usuário|
-  :Recebe erro de acesso;
-  stop
-endif
-
-@enduml
-```
-
 ### Descrição do Diagrama
 
 O diagrama ilustra:
@@ -114,4 +70,3 @@ O diagrama ilustra:
 *   **Segurança**: A validação de credenciais hardcoded é insegura. Recomenda-se usar hashes de senha armazenados em banco de dados.
 *   **Tratamento de Erros**: O tratamento de erros na validação do token pode ser aprimorado para usar códigos de status HTTP mais específicos (401/403).
 *   **Dados**: Os posts são carregados de um arquivo local; em produção, um banco de dados seria mais apropriado.
-
