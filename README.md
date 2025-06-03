@@ -67,6 +67,6 @@ A API executa duas rotas principais:
 - Rota Post
 ![Rota Post](./img/post.png)
 
-- Reota Get
+- Rota Get
 ![Rota Get](./img/get.png)
 
