@@ -18,6 +18,7 @@ npx nodemon
 - Node.js
 - VsCode
 - Insomnia
+- Xampp
 
 ## Bibliotecas Utilizadas
 
@@ -61,15 +62,6 @@ A API executa duas rotas principais:
 
 ### Descrição do Diagrama
 
-O diagrama ilustra:
-1.  O processo de login, onde o usuário envia credenciais e recebe um JWT se forem válidas.
-2.  O processo de acesso aos posts, onde o middleware valida o JWT antes de permitir que o controlador retorne os dados.
+##  Prints do insomnia.
+![Rota Post](login)
 
-## Considerações
-
-*   **Segurança**: A validação de credenciais hardcoded é insegura. Recomenda-se usar hashes de senha armazenados em banco de dados.
-*   **Tratamento de Erros**: O tratamento de erros na validação do token pode ser aprimorado para usar códigos de status HTTP mais específicos (401/403).
-*   **Dados**: Os posts são carregados de um arquivo local; em produção, um banco de dados seria mais apropriado.
-
-
-- Testar com insomnia.
