@@ -63,5 +63,5 @@ A API executa duas rotas principais:
 ### Descrição do Diagrama
 
 ##  Prints do insomnia.
-![Rota Post](login)
+![Rota Post](login.png)
 
