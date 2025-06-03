@@ -1,8 +1,8 @@
 # Login - auth
 
-## Atividade
-- Testar backend com insomnia.
+## Atividade em grupo de até 3 integrantes.
+- Clonar este repositório.
+- Testar a api com **insomnia**.
 - Estudar e documentar estrutura do projeto.
 - Detalhar e documentar bibliotecas utilizadas.
-- Documentar descrição do funcionamento.
-- Desenhar fluxo de informação (diagrama de atividades).
+- Documentar descrição do funcionamento utilizando **UML DA(Diagrama de Atividades)**.
