@@ -1,6 +1,6 @@
 # Login - auth
 Estrutura de autenticação para o projeto **Login**.
-## Integrantes do grupo: [Steffany]((https://github.com/steffanygiovanna))
+## Integrantes do grupo: [Steffany](https://github.com/steffanygiovanna)
 
 ## Para testar
 - Clonar este repositório.
