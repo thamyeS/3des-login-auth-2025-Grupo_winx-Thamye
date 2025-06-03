@@ -10,7 +10,6 @@ Estrutura de autenticação para o projeto **Login**.
 
 ## Bibliotecas Utilizadas
 
-
 - **/src** – Pasta principal com todo o código da API
   - **/controllers** – Arquivos responsáveis pela lógica das rotas
   - **/routes** – Arquivos que definem as rotas da API
