@@ -1,12 +1,20 @@
-
 # Login - auth
 Estrutura de autenticação para o projeto **Login**.
-## Atividade em grupo. (Winx- Thamye, Rebeca e Steffany)
+## Integrantes do grupo: [Steffany]((https://github.com/steffanygiovanna))
+
+## Para testar
 - Clonar este repositório.
+- Na pasta **./api**, criar um arquivo **.env **com as seguintes variáveis de ambiente:
+```js
+SECRET_JWT=f?#cPV9]2sc"}gQhO)Yx7IT1M*zuv&;FVC(vsFAz;]n2tK:T*uH|@Ixrow3bLC+
+```
+- Abrir com o VsCode e em um terminal cmd ou bash, executar o comando:
+```bash
+cd api
+npm install
+npx nodemon
+```
 - Testar a api com **insomnia**.
-- Estudar e documentar a estrutura do projeto.
-- Detalhar e documentar as bibliotecas utilizadas.
-- Documentar descrição do funcionamento utilizando **UML DA(Diagrama de Atividades)**.
 
 ## Bibliotecas Utilizadas
 
@@ -15,9 +23,6 @@ Estrutura de autenticação para o projeto **Login**.
   - **/routes** – Arquivos que definem as rotas da API
   - **/middlewares** – Arquivos que fazem verificações (ex.: autenticação JWT)
   - **server.js** – Arquivo principal que sobe o servidor
-  
-##  Bibliotecas Utilizadas
-
 - **express** – Framework para criar a API de forma simples e rápida
 - **jsonwebtoken** – Usado para gerar e validar tokens JWT (autenticação)
 - **cors** – Permite requisições de outros domínios (libera o acesso externo à API)
@@ -34,16 +39,9 @@ Estrutura de autenticação para o projeto **Login**.
 - Descrição: Verifica o token JWT.
 - Retorna todos os dados cadastrados.
 
-
-O projeto utiliza as seguintes bibliotecas Node.js, conforme listado no arquivo `package.json`:
-
-*   **dotenv**: Carrega variáveis de ambiente de um arquivo `.env` para `process.env`, essencial para gerenciar configurações sensíveis como a chave secreta do JWT fora do código-fonte.
-*   **Express**: Framework web minimalista para Node.js, utilizado como a espinha dorsal da API para definir rotas (`/login`, `/posts`), gerenciar requisições/respostas e integrar middlewares.
-*   **jsonwebtoken**: Implementa o padrão JSON Web Token (JWT) para criar tokens seguros após o login e verificar tokens em requisições a rotas protegidas, garantindo a autenticação do usuário.
-
 ## Funcionamento das Rotas
 
-A API expõe duas rotas principais:
+A API executa duas rotas principais:
 
 ### 1. Autenticação (`POST /login`)
 
@@ -69,3 +67,20 @@ O diagrama ilustra:
 *   **Segurança**: A validação de credenciais hardcoded é insegura. Recomenda-se usar hashes de senha armazenados em banco de dados.
 *   **Tratamento de Erros**: O tratamento de erros na validação do token pode ser aprimorado para usar códigos de status HTTP mais específicos (401/403).
 *   **Dados**: Os posts são carregados de um arquivo local; em produção, um banco de dados seria mais apropriado.
+
+# Login - auth
+Estrutura de autenticação para o projeto **Login**.
+## Atividade em grupo de até 3 integrantes.
+- Clonar este repositório.
+- Testar a api com **insomnia**.
+- Estudar e documentar a estrutura do projeto.
+- Detalhar e documentar as bibliotecas utilizadas.
+- Documentar descrição do funcionamento utilizando **UML DA(Diagrama de Atividades)**.
+
+## Tecnologias
+- Node.js
+- VsCode
+- Insomnia
+
+
+- Testar com insomnia.
