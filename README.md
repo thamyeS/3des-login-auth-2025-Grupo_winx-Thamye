@@ -1,7 +1,7 @@
 
 # Login - auth
 Estrutura de autenticação para o projeto **Login**.
-## Atividade em grupo.
+## Atividade em grupo. (Winx- Thamye, Rebeca e Steffany)
 - Clonar este repositório.
 - Testar a api com **insomnia**.
 - Estudar e documentar a estrutura do projeto.
