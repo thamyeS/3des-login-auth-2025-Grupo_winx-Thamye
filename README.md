@@ -59,8 +59,7 @@ A API executa duas rotas principais:
 *   **Fluxo**: Esta rota é protegida pelo middleware `validate`. O middleware extrai o token JWT do cabeçalho `Authorization`. Se o token estiver ausente, retorna 401. Se presente, verifica sua validade (assinatura e expiração) usando a `SECRET_JWT`. Se inválido, retorna 500 (idealmente seria 401/403). Se válido, anexa o payload do token à requisição e passa o controle ao controlador `posts`. O controlador lê dados de posts de `src/data/posts.js` e os retorna com status 200.
 
 ## Diagrama de Atividades UML
-![Diagrama](./img/diagrama%20de%20atividad.png)
-### Descrição do Diagrama
+![Diagrama](./img/diagrama%20de%20atividad.png) 
 
 ##  Prints do insomnia.
 
